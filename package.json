@@ -1,0 +1,44 @@
+{
+  "name": "redux-logger-filter",
+  "version": "1.0.0",
+  "description": "module to provide filter function to redux-logger",
+  "main": "dist/react-logger-filter.cjs",
+  "module": "dist/react-logger-filter.mjs",
+  "scripts": {
+    "build": "rollup -c"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BitYoungjae/redux-logger-filter.git"
+  },
+  "keywords": [
+    "redux",
+    "redux-logger",
+    "redux-logger-filter",
+    "redux helper"
+  ],
+  "files": [
+    "dist"
+  ],
+  "author": {
+    "name": "BitYoungjae",
+    "email": "bityoungjae@gmail.com",
+    "url": "htttps://bityoungjae.com"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/BitYoungjae/redux-logger-filter/issues"
+  },
+  "homepage": "https://github.com/BitYoungjae/redux-logger-filter#readme",
+  "devDependencies": {
+    "@babel/core": "^7.10.2",
+    "@babel/preset-env": "^7.10.2",
+    "@rollup/plugin-babel": "^5.0.3",
+    "@rollup/plugin-typescript": "^4.1.2",
+    "core-js": "^3.6.5",
+    "rollup": "^2.15.0",
+    "rollup-plugin-terser": "^6.1.0",
+    "tslib": "^2.0.0",
+    "typescript": "^3.9.5"
+  }
+}
