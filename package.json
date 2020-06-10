@@ -1,6 +1,6 @@
 {
   "name": "redux-logger-filter",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "module to provide filter function to redux-logger",
   "main": "dist/react-logger-filter.cjs",
   "module": "dist/react-logger-filter.mjs",
