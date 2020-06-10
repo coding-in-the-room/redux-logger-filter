@@ -62,26 +62,10 @@ You can also exclude certain actions.
 import { createLogger } from 'redux-logger';
 import { makeLogFilter, excludeFilter } from 'redux-logger-filter';
 
-const filter = makeLogFilter(increase(), decrease());
+const filter = makeLogFilter('INCREASE', 'DECREASE');
 
 const logger = createLogger({
-  predicate: excludeFilter(filter)
-});
-```
-
-### composeFilter
-
-Multiple filters can be used in combination.
-
-```js
-import { createLogger } from 'redux-logger';
-import { makeLogFilter, excludeFilter, composeFilter } from 'redux-logger-filter';
-
-const filter = makeLogFilter(increase());
-const filter = excludeFilter(makeLogFilter(decrease()));
-
-const logger = createLogger({
-  predicate: excludeFilter(filter)
+  predicate: excludeFilter(filter) // Do not log INCREASE and DECREASE actions.
 });
 ```
 
