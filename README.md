@@ -65,7 +65,7 @@ import { makeLogFilter, excludeFilter } from 'redux-logger-filter';
 const filter = makeLogFilter('INCREASE', 'DECREASE');
 
 const logger = createLogger({
-  predicate: excludeFilter(filter) // Do not log INCREASE and DECREASE actions.
+  predicate: excludeFilter(filter) // Excludes INCREASE and DECREASE actions.
 });
 ```
 
