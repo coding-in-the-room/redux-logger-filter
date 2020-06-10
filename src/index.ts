@@ -45,4 +45,13 @@ function makeLogFilter<T extends ActionType>(
   return logFilter;
 }
 
-export default makeLogFilter;
+const excludeFilter = (filterFunction:IFilterFunction):IFilterFunction => {
+  return (_: any, action: IAction) => {
+    return !filterFunction(_, action);
+  }
+}
+
+export {
+  makeLogFilter,
+  excludeFilter,
+}

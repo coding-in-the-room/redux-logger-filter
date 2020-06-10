@@ -17,7 +17,7 @@ Use the `predicate` parameter of the `createLogger` function.
 ```js
 import { applyMiddleware, createStore } from 'redux';
 import { createLogger } from 'redux-logger';
-import makeLogFilter from 'redux-logger-filter';
+import { makeLogFilter } from 'redux-logger-filter';
 
 // Set to log only 'INCREASE' and 'DECREASE'.
 const logger = createLogger({
@@ -52,6 +52,37 @@ const logger = createLogger({
   predicate: makeLogFilter(increase(), decrease())
 });
 */
+```
+
+### excludeFilter
+
+You can also exclude certain actions.
+
+```js
+import { createLogger } from 'redux-logger';
+import { makeLogFilter, excludeFilter } from 'redux-logger-filter';
+
+const filter = makeLogFilter(increase(), decrease());
+
+const logger = createLogger({
+  predicate: excludeFilter(filter)
+});
+```
+
+### composeFilter
+
+Multiple filters can be used in combination.
+
+```js
+import { createLogger } from 'redux-logger';
+import { makeLogFilter, excludeFilter, composeFilter } from 'redux-logger-filter';
+
+const filter = makeLogFilter(increase());
+const filter = excludeFilter(makeLogFilter(decrease()));
+
+const logger = createLogger({
+  predicate: excludeFilter(filter)
+});
 ```
 
 ## Author
